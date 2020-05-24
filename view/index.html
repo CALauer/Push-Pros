@@ -25,50 +25,17 @@
         Load Data
       </button>
       <div class="table-responsive-xl">
+        <script id="pushPros" type="text/x-handlebars-template">
+            
+        </script>
         <table
           class="table table-borderless table-hover table-responsive-xl  mt-5"
-          id="data_table"
-        >
+          id="data1">
+
           <tr>
-            <th class="border-bottom">id</th>
-            <th class="border-bottom">uid</th>
-            <th class="border-bottom">url</th>
-            <th class="border-bottom">name</th>
-            <th class="border-bottom">icon</th>
-            <th class="border-bottom">promptId</th>
-            <th class="border-bottom">webPushID</th>
-            <th class="border-bottom">auto_prompt</th>
-            <th class="border-bottom">createdAt</th>
-            <th class="border-bottom">active</th>
+            
           </tr>
         </table>
-
-        <script id="pushPros" type="text/x-handlebars-template">
-          <tr>
-              <th class="border-bottom">id</th>
-              <th class="border-bottom">uid</th>
-              <th class="border-bottom">url</th>
-              <th class="border-bottom">name</th>
-              <th class="border-bottom">icon</th>
-              <th class="border-bottom">promptId</th>
-              <th class="border-bottom">webPushID</th>
-              <th class="border-bottom">auto_prompt</th>
-              <th class="border-bottom">createdAt</th>
-              <th class="border-bottom">active</th>
-            </tr>
-            {{#each sites}}
-            <tr></tr><td class="font-weight-bold border-bottom">{{id}}</td>
-                <td class="border-bottom">{{uid}}</td>
-                <td class="border-bottom"><a id ="show_url"href="{{url}}">Here</a></td>
-                <td class="border-bottom">{{name}}</td>
-                <td class="border-bottom"><a href="{{icon}}">View Icon</a></td>
-                <td class="border-bottom">{{promptId}}</td>
-                <td class="border-bottom">{{webPushID}}</td>
-                <td class="border-bottom">{{auto_prompt}}</td>
-                <td class="border-bottom">{{createdAt}}</td>
-                <td class="border-bottom">{{active}}</td>
-             {{/each}}
-        </script>
       </div>
     </div>
     <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
