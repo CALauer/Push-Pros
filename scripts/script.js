@@ -1,7 +1,7 @@
 
 $( document ).ready(function() {
 	// Handler for .ready() called.
-
+	
 function getData() { //Gets the data from the JSON URL
     return $.ajax({
         url : 'https://aimtell.com/files/sites.json',
