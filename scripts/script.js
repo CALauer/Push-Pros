@@ -1,11 +1,16 @@
+
+$( document ).ready(function() {
+	// Handler for .ready() called.
+
 function getData() { //Gets the data from the JSON URL
     return $.ajax({
         url : 'https://aimtell.com/files/sites.json',
         type: 'GET'
     });
 }
-getData().done(initialize);
-function initialize (data) {
+getData().done(initialize); // Initialize the connection
+
+function initialize (data) { // Loads the table headings
 	let siteData = 
 	'{{#each sites}}{{#if @last}}{{#each this}}<th class="border-bottom">{{@key}}</th>{{/each}}{{/if}}{{/each}}'
 	let source = document.querySelector('#pushPros').innerHTML
@@ -13,10 +18,9 @@ function initialize (data) {
 	let html = template(data)
 	let destination = document.querySelector('#data1')
 	destination.innerHTML = html
-console.log(data)
-	console.log(data)
 }
-function loadDataTable(data) {
+
+function loadDataTable(data) { // Input the data into the data
 	 let siteData = 
 	  '{{#each sites}}{{#if @last}}{{#each this}}<th class="border-bottom">{{@key}}</th>{{/each}}{{/if}}{{/each}}'
 	  + '{{#each sites}}<tr><td class="font-weight-bold border-bottom">{{id}}</td>'
@@ -34,8 +38,9 @@ function loadDataTable(data) {
 	  let html = template(data)
       let destination = document.querySelector('#data1')
       destination.innerHTML = html
-
 }
-$('#load_data_btn').click(function () {
-	getData().done(loadDataTable) // Load Data On Click
+// Actions
+$('#load_data_btn').click(function () { 
+	getData().done(loadDataTable) // Call to receive and add data to table
 })
+});
